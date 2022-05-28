@@ -29,12 +29,11 @@ jobs:
           node-version: '16'
           cache: 'npm'
 
-      # Runs a single command using the runners shell
-      - name: Hello world
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Deploy to github pages
         run: |
           npm i
-          npm run deploy
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
