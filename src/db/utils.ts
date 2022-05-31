@@ -6,20 +6,20 @@ export const getRandomInt = (min: number, max: number): number => {
     max = Math.floor(max);
     // Максимум не включается, минимум включается
     return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 
 export const getRandomWord = (): string => {
     return lettersArray[getRandomInt(0, lettersArray.length + 1)];
-}
+};
 
 export const getWordDefinition = (word: keyof typeof lettersDefinitions): string => {
     return lettersDefinitions[word]?.definition;
-}
+};
 
 export const isWordExist = (word: string) => {
     // @ts-expect-error
     return Boolean(lettersDefinitions[word]);
-}
+};
 
 export enum Positions {
     NO = 0,
@@ -47,4 +47,4 @@ export const getWordsDifference = (originalWord: string, targetWord: string): Po
     });
 
     return result;
-}
+};

@@ -5,13 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MainGame from './pages/MainGame';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <MainGame />
-  </React.StrictMode>
+    <React.StrictMode>
+        <MainGame />
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
