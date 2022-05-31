@@ -35,7 +35,7 @@ export const getWordsDifference = (originalWord: string, targetWord: string): Po
     const originalWordArray = originalWord.split('');
     const tragetWordArray = targetWord.split('');
 
-    const result: Positions[] =  tragetWordArray.map((letter, i) => {
+    const result: Positions[] = tragetWordArray.map((letter, i) => {
         const foundIndex = originalWordArray.indexOf(letter);
         if (foundIndex === i) {
             return Positions.EXACLY;
