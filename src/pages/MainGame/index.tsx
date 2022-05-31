@@ -1,14 +1,13 @@
 import React, { memo } from 'react';
 
 import * as Styled from './styled';
-import { CloseButton, Field, Header, Help, Keyboard } from './styled';
 
 interface IMainGameProps {}
 
 const MainGame: React.FC<IMainGameProps> = (props) => {
   return (
     <Styled.Content>
-      <Styled.CloseButton>Закрыть</Styled.CloseButton>
+      <Styled.CloseButton onClick={window.close}>Закрыть</Styled.CloseButton>
 
       <Styled.Game>
         <Styled.Header>
@@ -16,9 +15,15 @@ const MainGame: React.FC<IMainGameProps> = (props) => {
           <Styled.Help>Help</Styled.Help>
         </Styled.Header>
 
-        <Styled.Field>Field</Styled.Field>
+        <Styled.Field>
+          {Array.from({ length: 5 }).map((key) => Array.from({ length: 5 }).map((key) => <Styled.BaseLetter />))}
+        </Styled.Field>
 
-        <Styled.Keyboard>Keyboard</Styled.Keyboard>
+        <Styled.Keyboard>
+          {Array.from({ length: 12 }).map((key) =>
+            Array.from({ length: 3 }).map((key) => <Styled.BaseKeyButton>Й</Styled.BaseKeyButton>),
+          )}
+        </Styled.Keyboard>
       </Styled.Game>
     </Styled.Content>
   );
