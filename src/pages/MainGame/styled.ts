@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { colors } from '../../utils/colors';
 
 const BasePadding = `20px`;
 
@@ -14,7 +15,7 @@ export const CloseButton = styled.button`
   margin: 10px ${BasePadding};
   background: transparent;
   font-weight: 500;
-  color: white;
+  color: ${colors.white};
   border: none;
 
   :focus,
@@ -57,33 +58,83 @@ export const Field = styled.main`
 
 export const Keyboard = styled.footer`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 2px;
-  grid-row-gap: 4px;
+  grid-template: repeat(3, 1fr) / repeat(24, 1fr);
+  gap: 4px 2px;
+  justify-content: end;
+  align-items: end;
 `;
 
+const yellowBtn = css`
+  background: ${colors.yellow};
+  color: ${colors.black};
+
+  :active {
+    background: ${colors.darkYellow};
+    color: ${colors.white};
+  }
+`;
+
+const greyBtn = css`
+  background: ${colors.grey};
+  color: ${colors.white};
+
+  :active {
+    background: ${colors.darkGray};
+    color: ${colors.white};
+  }
+`;
+
+const whiteBtn = css`
+  background: ${colors.white};
+  color: ${colors.black};
+
+  :active {
+    background: ${colors.lightGrey};
+    color: ${colors.white};
+  }
+`;
+
+const styleTypes: Record<string, any> = {
+  marginLeft: css`
+    grid-column: 2 / 4;
+  `,
+  large: css`
+    grid-column: span 3;
+  `,
+  yellow: yellowBtn,
+  grey: greyBtn,
+  white: whiteBtn,
+};
+
+const BaseBtn = styled.div``;
+
 export const BaseLetter = styled.div`
-  border: 1px solid #fade56;
+  border: 1px solid ${colors.yellow};
   min-height: 60px;
   min-width: 60px;
   border-radius: 4px;
+  color: ${colors.white};
 `;
 
-export const BaseKeyButton = styled.button`
-  border: 1px solid #5f5f5f;
-  padding: 14px 4px;
+export const BaseKeyButton = styled.button<{ styleType?: string }>`
+  border: 1px solid ${colors.grey};
+  padding: 10px 4px;
   min-height: 35px;
   min-width: 20px;
   border-radius: 6px;
   background: transparent;
-  color: white;
-  font-size: 14px;
+  color: ${colors.white};
+  font-size: 18px;
+  grid-column: span 2;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
-  :focus,
-  :active,
-  :hover {
-    background: #262626;
+  :active {
     transition: 0.1s ease-in-out;
+    background: ${colors.darkGray};
+    color: ${colors.white};
   }
+
+  ${({ styleType }) => styleType && styleType.split(' ').map((type) => styleTypes[type])}
 `;
