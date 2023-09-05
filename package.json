@@ -1,6 +1,6 @@
 {
   "homepage": "http://lapshina.net/5-words-game",
-  "name": "5-letter-game",
+  "name": "experiments",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainGame from './pages/MainGame';
+import Investments from './investments';
+// import MainGame from './5-words-game/pages/MainGame';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <MainGame />
+    {/*<MainGame />*/}
+    <Investments />
   </React.StrictMode>,
 );
 
