@@ -1,6 +1,6 @@
 {
   "homepage": "http://lapshina.net/5-words-game",
-  "name": "experiments",
+  "name": "apps-collection",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,8 +12,10 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@types/styled-components": "^5.1.25",
+    "final-form": "^4.20.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-final-form": "^6.5.9",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.7.2",
@@ -47,6 +49,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.22.20",
+    "eslint": "^8.50.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.0",
     "prettier": "^2.6.2",

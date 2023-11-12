@@ -8,7 +8,7 @@ import Investments from './investments';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    {/*<MainGame />*/}
+    {/* <MainGame /> */}
     <Investments />
   </React.StrictMode>,
 );

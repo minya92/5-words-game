@@ -1,0 +1,41 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "useBuiltIns": "entry",
+          "corejs": 3,
+          "targets": {
+            "esmodules": true,
+            "ie": "11"
+          }
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-object-assign",
+    "@babel/plugin-proposal-optional-chaining",
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "fileName": false,
+        "minify": false,
+        "transpileTemplateLiterals": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": ["transform-react-remove-prop-types"]
+    }
+  }
+}

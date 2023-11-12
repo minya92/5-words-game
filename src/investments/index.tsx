@@ -1,9 +1,19 @@
 import React, { memo } from 'react';
+import styled from 'styled-components';
+import SearchPage from './pages/SearchPage';
 
-interface IMainGameProps {}
+const StyledInvestments = styled.div`
+  color: yellow;
+`;
 
-const Investments: React.FC<IMainGameProps> = (props) => {
-  return <div>1</div>;
+interface IInvestmentsProps {}
+
+const Investments: React.FC<IInvestmentsProps> = (props) => {
+  return (
+    <StyledInvestments>
+      <SearchPage />
+    </StyledInvestments>
+  );
 };
 
 export default memo(Investments);
